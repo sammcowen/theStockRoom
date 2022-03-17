@@ -6,6 +6,7 @@ const { Category, Product } = require('../../models');
 router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
+
 });
 
 router.get('/:id', (req, res) => {
@@ -23,6 +24,22 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
+  Category.destroy({
+    where: {
+      id:req.params.id
+    }
+  })
+  .then(categorydb => {
+    if(!categorydb) {
+      res.status(404).json({message:'no such category exists!'});
+      return;
+    }
+    res.json(categorydb);
+  }).catch(err => { 
+    console.log(err);
+    res.status(500).json(err);
+
+  });
 });
 
 module.exports = router;
