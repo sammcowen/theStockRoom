@@ -16,7 +16,7 @@ Category.init(
       autoIncrement: true
     },
     // define category name column accepts input as string and cannot be null
-    category: {
+    category_name: {
       type: DataTypes.STRING,
       allowNull: false
     }
