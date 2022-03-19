@@ -14,6 +14,7 @@ Tag.init(
       autoIncrement:true,
 
     },
+    // DEFINES TAG NAME AS A STRING
     tag_name:{
       type:DataTypes.STRING
     }

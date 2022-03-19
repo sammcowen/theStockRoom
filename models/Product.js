@@ -29,6 +29,7 @@ Product.init(
        isDecimal:true
      }
    },
+  //  DEFINE STOCK AS INTEGER NOT NULL , DEFAULT STOCK 10 , VALIDATE FOR NUMERIC VALUE ONLY
    stock:{
      type:DataTypes.INTEGER,
     allowNull:false,
@@ -37,6 +38,7 @@ Product.init(
       isNumeric:true
     }
    },
+  //  REFERENCES THE CATEGORY ID 
    category_id:{
      type:DataTypes.INTEGER,
      references:{

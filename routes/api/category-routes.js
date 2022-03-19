@@ -88,12 +88,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(categorydb => {
-      if (!categorydb) {
+    .then(categorydata => {
+      if (!categorydata) {
         res.status(404).json({ message: 'no such category exists!' });
         return;
       }
-      res.json(categorydb);
+      res.json(categorydata);
     }).catch(err => {
       console.log(err);
       res.status(500).json(err);
